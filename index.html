@@ -15,21 +15,9 @@
     <title>Any weather is cool</title>
 </head>
 <body>
+
+<div class="weatherApp">
 <div class="container">
-    <div class="container-md d-flex cities">
-        <div class="row">
-          <div class="col">
-            Kyiv
-          </div>
-          <div class="col">
-            Warsaw
-          </div>
-          <div class="col">
-            Berlin
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="current-city">
     <p>
     Current city
@@ -52,8 +40,10 @@
         °C
     </span>
     </h3>
-    <h4 id = "description">
-    Cloudy
+    <h4 id = "condition">
+    <li id = "description">Cloudy</li>
+    <li>Wind: </span id = "wind"> m/h</li>
+    <li>Humidity: <span id = "humidity"></span>%</li>
     </h4>
     </div>
     <div class="searchbar">
@@ -105,9 +95,11 @@
         </div>
     </div>
 </div>
-<p>
-  https://github.com/littlerhubarb/Weather/tree/main
-</p>
+</div>
+</div>
+<a class="github">
+href="https://github.com/littlerhubarb/project"
+</a>
 <script src="src/index.js"></script>
 </body>
 </html>
