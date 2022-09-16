@@ -1,41 +1,48 @@
+weatherApp{
+  margin:30px auto;
+  padding: 10px;
+  border: 1px solid blue;
+  border-radius: 5px;
+  max-width: 800px;
+}
+
+li {
+  list-style: none;
+}
+
+.github{
+  text-align: center;
+  margin: 0 auto;
+}
+
 .current-city {
   position: relative;
-  left: 80px;
+  left: 30px;
 }
 
 .cloud-icon {
-  font-size: 300px;
+  font-size: 250px;
   color: #79bac1;
-}
-
-.cities {
-  position: relative;
-  left: 950px;
-  top: 25px;
-  color: #512b58;
-  font-family: "Kanit", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
 }
 
 .searchbar {
   position: absolute;
-  right: 140px;
-  top: 75px;
+  right: 290px;
+  top: 90px;
 }
 
 .search-button {
   background: #2a7886;
   color: #f1f3f4;
-  border-radius: 25px;
-  padding: 5px 8px 5px 8px;
+  border-radius: 5px;
+  padding: 5px 16px 5px 16px;
   font-family: "Kanit", sans-serif;
 }
 
 .weekdays {
   position: absolute;
-  right: 115px;
-  top: 140px;
+  right: 280px;
+  top: 150px;
 }
 
 .day {
