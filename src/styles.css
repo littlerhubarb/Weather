@@ -49,12 +49,17 @@ li {
   position: relative;
   left: 460px;
   bottom: 480px;
+  color:#b3a3ca;
+}
+
+.card {
+  color:#b3a3ca;
 }
 
 .day {
   position: relative;
   left: 100px;
-  color: #333366;
+  color: #7c7caa;
   font-family: "Kanit", sans-serif;
   font-weight: 500;
 }
