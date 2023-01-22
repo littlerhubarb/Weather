@@ -42,6 +42,8 @@ function displayWeatherCondition(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  celciusTemperature = response.data.main.temp;
 }
 
 function search(event) {
@@ -62,13 +64,25 @@ function searchCity(city) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
-search("Amsterdam");
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celciusTemperature* 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+
+let celciusTemperature = null;
 
 let fahrenheitlink = document.querySelector("#fahrenheit-link");
 fahrenheitlink.addEventListener("click", displayFahrenheitTemperature);
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (14 * 9) / 5 + 32;
-  alert(fahrenheitTemperature);
-}
+let celsiuslink = document.querySelector("#celsius-link");
+fahrenheitlink.addEventListener("click", displayCelsiusTemperature);
+
+search("Amsterdam");
