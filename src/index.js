@@ -25,13 +25,6 @@ let day = days[now.getDay()];
 h2.innerHTML = `${day}, ${date} ${month} ${year} ${hour}:${minutes}`;
 
 function displayWeatherCondition(response) {
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
-
   document.querySelector("#city").innerHTML = response.data.name;
   console.log(response.data.name);
     document.querySelector("#temperature").innerHTML = 
@@ -43,6 +36,12 @@ function displayWeatherCondition(response) {
     response.data.main.humidity;
     document.querySelector("#wind").innerHTML = 
     response.data.wind.speed;
+    let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(event) {
@@ -59,5 +58,17 @@ function searchCity(city) {
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
+
+search("Amsterdam");
+
+let fahrenheitlink = document.querySelector("#fahrenheit-link");
+fahrenheitlink.addEventListener("click", displayFahrenheitTemperature);
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (14 * 9) / 5 + 32;
+  alert(fahrenheitTemperature);
+}
