@@ -35,7 +35,7 @@ function displayWeatherCondition(response) {
     document.querySelector("#humidity").innerHTML = 
     response.data.main.humidity;
     document.querySelector("#wind").innerHTML = 
-    response.data.wind.speed;
+    Math.round(response.data.wind.speed);
     let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
