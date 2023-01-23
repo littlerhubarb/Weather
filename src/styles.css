@@ -73,8 +73,15 @@ li {
   font-weight: 500;
 }
 
-.unit .active {
+.weather-temperature .active{
+  color: #36454F;
+  text-decoration: none;
+}
+
+.weather-temperature .active:hover{
 color: #36454F;
+text-decoration: none;
+cursor: default;
 }
 
 body {

@@ -66,14 +66,18 @@ searchForm.addEventListener("submit", search);
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (celciusTemperature* 9) / 5 + 32;
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
+  celsiuslink.classList.remove("active");
+  fahrenheitlink.classList.add("active");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  fahrenheitlink.classList.remove("active");
+  celsiuslink.classList.add("active");
   temperatureElement.innerHTML = Math.round(celciusTemperature);
 }
 
@@ -82,7 +86,7 @@ let celciusTemperature = null;
 let fahrenheitlink = document.querySelector("#fahrenheit-link");
 fahrenheitlink.addEventListener("click", displayFahrenheitTemperature);
 
-let celsiuslink = document.querySelector("#celsius-link");
-fahrenheitlink.addEventListener("click", displayCelsiusTemperature);
+let celsiuslink = document.querySelector("#celcius-link");
+celsiuslink.addEventListener("click", displayCelsiusTemperature);
 
-search("Amsterdam");
+searchCity("Amsterdam");
