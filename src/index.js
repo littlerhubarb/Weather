@@ -27,7 +27,7 @@ h2.innerHTML = `${day}, ${date} ${month} ${year} ${hour}:${minutes}`;
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return days[day];
 }
@@ -74,7 +74,7 @@ function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "c544cc0b1b14fc3f9a412974ee9cff4a";
   let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
+  axios.get(apiURL).then(displayForecast);
 }
 
 function displayWeatherCondition(response) {
@@ -97,6 +97,7 @@ function displayWeatherCondition(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   celciusTemperature = response.data.main.temp;
+  getForecast(response.data.coord)
 }
 
 function search(event) {
@@ -143,4 +144,3 @@ let celsiuslink = document.querySelector("#celcius-link");
 celsiuslink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Amsterdam");
-displayForecast();
