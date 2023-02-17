@@ -1,6 +1,5 @@
-.image-container {
-  background-image: ("https://www.pexels.com/photo/close-up-photo-of-moisture-2763927/");
-  background-size: cover;
+body {
+    background-image: url('https://source.unsplash.com/1600x900/?sky');
 }
 
 .weatherApp{
@@ -12,6 +11,7 @@
   max-width: 800px;
   max-height: 900px;
   opacity: 0.9;
+  background-color: transparent;
 }
 
 li {
@@ -19,10 +19,16 @@ li {
 }
 
 .github{
-  text-align: center;
   margin: 0 auto;
-  position: relative;
-  left: 350px;
+  position: absolute;
+  left: 650px;
+  bottom: 50px;
+  background-color: #1f1f3bbc;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-family: "Kanit", sans-serif;
 }
 
 .current-city {
@@ -31,17 +37,11 @@ li {
   top: 20px;
 }
 
-.cloud-icon {
-  font-size: 130px;
-  color: #49a3ac;
-  opacity: 50%;
-}
-
 
 .searchbar {
   position: relative;
   left: 435px;
-  bottom: 430px;
+  bottom: 425px;
 }
 
 .search-button {
@@ -55,7 +55,7 @@ li {
   
 .day {
   position: relative;
-  left: 100px;
+  left: 110px;
   color: #7c7caa;
   font-family: "Kanit", sans-serif;
   font-weight: 500;
@@ -63,7 +63,7 @@ li {
 
 .temperature {
   position: relative;
-  left: 110px;
+  left: 120px;
   color: #36454F;
   font-family: "Kanit", sans-serif;
   font-weight: 500;
@@ -84,6 +84,7 @@ h1,
 h2 {
   color: #333366;
   font-family: "Kanit", sans-serif;
+  margin-left: 18px;
 }
 
 h1 {
@@ -98,12 +99,14 @@ h3 {
   color: #36454F;
   font-family: "Kanit", sans-serif;
   font-weight: 300px;
+  margin-left: 18px;
 }
 
 h4 {
   color: #36454F;
   font-family: "Kanit", sans-serif;
   font-weight: 300px;
+  margin-left: 18px;
 }
 
 p {
@@ -120,16 +123,19 @@ p {
 }
 
 .weather-forecast-date {
+  color: #333366;
   font-size: 18px;
   opacity: 0.8;
 }
 
 .weather-forecast-temperature-min {
+  color: #36454F;
   opacity: 0.6;
   font-family: "Kanit", sans-serif;
 }
 
 .weather-forecast-temperatures {
+  color: #36454F;
   font-size: 15px;
   font-family: "Kanit", sans-serif;
 }
